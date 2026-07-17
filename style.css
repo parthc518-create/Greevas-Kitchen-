@@ -788,3 +788,66 @@ height:55px;
 }
 
 }
+/* SEARCH */
+
+.menu-tools{
+
+margin-bottom:40px;
+
+}
+
+#searchMenu{
+
+width:100%;
+
+padding:15px;
+
+font-size:18px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+margin-bottom:20px;
+
+}
+
+.category-filter{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+justify-content:center;
+
+}
+
+.category-filter button{
+
+padding:12px 22px;
+
+border:none;
+
+background:#ff6600;
+
+color:#fff;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.category-filter button:hover{
+
+background:#e65100;
+
+transform:translateY(-2px);
+
+}
