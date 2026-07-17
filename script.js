@@ -494,16 +494,51 @@ nav{
 const phone = "917778877642";
 
 // Dynamic Order Function
-function orderItem(item) {
+document.getElementById("placeOrderBtn").onclick=function(){
 
-    const message =
-`🍽️ Hello Greeva's Kitchen!
+let name=document.getElementById("customerName").value;
 
-I want to order:
+let phone=document.getElementById("customerPhone").value;
 
-✅ ${item}
+let address=document.getElementById("customerAddress").value;
 
-Please share availability.
+if(name=="" || phone=="" || address==""){
+
+alert("Please Fill All Details");
+
+return;
+
+}
+
+if(cart.length==0){
+
+alert("Your Cart is Empty");
+
+return;
+
+}
+
+let msg=`🍽️ *New Order - Greeva's Kitchen*%0A%0A`;
+
+msg+=`👤 Name : ${name}%0A`;
+
+msg+=`📞 Mobile : ${phone}%0A`;
+
+msg+=`📍 Address : ${address}%0A%0A`;
+
+msg+=`🛒 *Order Details*%0A`;
+
+cart.forEach(item=>{
+
+msg+=`${item.qty} x ${item.name} = ₹${item.qty*item.price}%0A`;
+
+});
+
+msg+=`%0A💰 *Total Bill : ₹${total}*`;
+
+window.open(`https://wa.me/917778877642?text=${msg}`);
+
+}.
 
 Thank You ❤️`;
 
