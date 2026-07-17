@@ -157,30 +157,54 @@ function removeItem(index){
 
 // WhatsApp Order Button
 
-document.querySelector(".whatsapp").addEventListener("click", function(){
+document.getElementById("placeOrderBtn").addEventListener("click", function () {
 
-    // WhatsApp Settings
-const phone = "917778877642";
+    let name = document.getElementById("customerName").value.trim();
+    let phone = document.getElementById("customerPhone").value.trim();
+    let address = document.getElementById("customerAddress").value.trim();
 
-function orderNow(item) {
-    const message = `Hello Greeva's Kitchen! 👋
+    if(name === "" || phone === "" || address === ""){
+        alert("Please fill all details.");
+        return;
+    }
 
-I want to order:
-🍽️ ${item}
+    if(cart.length === 0){
+        alert("Your cart is empty.");
+        return;
+    }
 
-Please share the details.`;
+    let message = `🍽️ *NEW ORDER - Greeva's Kitchen*\n\n`;
 
-    window.open(
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-        "_blank"
-    );
-}
+    message += `👤 Name : ${name}\n`;
+    message += `📞 Mobile : ${phone}\n`;
+    message += `📍 Address : ${address}\n\n`;
 
-    window.open(url,"_blank");
+    message += `🛒 *Order Details*\n`;
+    message += `-------------------------\n`;
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        let itemTotal = item.price * item.qty;
+        total += itemTotal;
+
+        message += `✅ ${item.name}\n`;
+        message += `   Qty : ${item.qty}\n`;
+        message += `   Price : ₹${item.price}\n`;
+        message += `   Total : ₹${itemTotal}\n\n`;
+
+    });
+
+    message += `-------------------------\n`;
+    message += `💰 *Grand Total : ₹${total}*\n\n`;
+    message += `🙏 Please confirm my order.`;
+
+    let whatsapp = `https://wa.me/917778877642?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsapp, "_blank");
 
 });
-
-
 
 
 // Hero Button
