@@ -19,7 +19,7 @@ document.querySelectorAll('nav a').forEach(link => {
 });
 
 // WhatsApp Number
-let phone = "917778877642";
+
 
 
 // WhatsApp Order Button
@@ -28,7 +28,7 @@ document.querySelector(".whatsapp").addEventListener("click", function(){
 
     let message = "Hello Greeva's Kitchen, I want to place an order.";
 
-    let phone = "91XXXXXXXXXX";
+ let phone = "917778877642";
 
     let url = 
     "https://wa.me/" + phone + "?text=" + 
