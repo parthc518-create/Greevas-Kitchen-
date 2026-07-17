@@ -26,14 +26,22 @@ document.querySelectorAll('nav a').forEach(link => {
 
 document.querySelector(".whatsapp").addEventListener("click", function(){
 
-    let message = "Hello Greeva's Kitchen, I want to place an order.";
+    // WhatsApp Settings
+const phone = "917778877642";
 
- let phone = "917778877642";
+function orderNow(item) {
+    const message = `Hello Greeva's Kitchen! 👋
 
-    let url = 
-    "https://wa.me/" + phone + "?text=" + 
-    encodeURIComponent(message);
+I want to order:
+🍽️ ${item}
 
+Please share the details.`;
+
+    window.open(
+        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+}
 
     window.open(url,"_blank");
 
