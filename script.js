@@ -1,69 +1,102 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+// Smooth scroll effect
 
+document.querySelectorAll('nav a').forEach(link => {
 
-html{
-    scroll-behavior:smooth;
-}
+    link.addEventListener('click', function(e){
 
+        e.preventDefault();
 
-body{
-    background:#ffffff;
-    color:#333;
-}
+        let target = document.querySelector(
+            this.getAttribute('href')
+        );
 
+        target.scrollIntoView({
+            behavior:"smooth"
+        });
 
+    });
 
-/* HEADER */
-
-header{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:#ffffff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-
-.logo{
-    font-size:26px;
-    font-weight:700;
-    color:#d62828;
-}
-
-
-nav a{
-    text-decoration:none;
-    color:#333;
-    margin-left:25px;
-    font-weight:500;
-}
-
-
-nav a:hover{
-    color:#d62828;
-}
+});
 
 
 
-/* HERO SECTION */
+
+// WhatsApp Order Button
+
+document.querySelector(".whatsapp").addEventListener("click", function(){
+
+    let message = "Hello Greeva's Kitchen, I want to place an order.";
+
+    let phone = "91XXXXXXXXXX";
+
+    let url = 
+    "https://wa.me/" + phone + "?text=" + 
+    encodeURIComponent(message);
 
 
-.hero{
+    window.open(url,"_blank");
 
-    height:90vh;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
+});
+
+
+
+
+// Hero Button
+
+document.querySelector(".hero button").addEventListener("click", function(){
+
+    document.querySelector("#contact")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+});
+
+
+
+
+// Simple Scroll Animation
+
+window.addEventListener("scroll", function(){
+
+    let boxes = document.querySelectorAll(
+        ".box,.card"
+    );
+
+
+    boxes.forEach(box => {
+
+        let position = box.getBoundingClientRect().top;
+
+        let screen = window.innerHeight;
+
+
+        if(position < screen - 100){
+
+            box.style.opacity = "1";
+            box.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+});
+
+
+
+
+// Initial Animation Style
+
+document.querySelectorAll(".box,.card")
+.forEach(item => {
+
+    item.style.opacity = "0";
+
+    item.style.transform = "translateY(40px)";
+
+    item.style.transition = "0.6s ease";
+
+});    padding:0 8%;
     background:
     linear-gradient(
     rgba(214,40,40,0.75),
