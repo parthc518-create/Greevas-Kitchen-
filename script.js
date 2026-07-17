@@ -18,7 +18,8 @@ document.querySelectorAll('nav a').forEach(link => {
 
 });
 
-
+// WhatsApp Number
+let phone = "917778877642";
 
 
 // WhatsApp Order Button
