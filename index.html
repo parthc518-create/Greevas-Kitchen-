@@ -15,7 +15,35 @@ Every dish is made to give you the perfect taste at an affordable price.
 <div class="container">
 
 <h2>Our Menu</h2>
+<!-- ========================= -->
+<!-- SEARCH & FILTER -->
+<!-- ========================= -->
 
+<div class="menu-tools">
+
+<input
+type="text"
+id="searchMenu"
+placeholder="🔍 Search Your Favourite Food..."
+onkeyup="searchFood()">
+
+<div class="category-filter">
+
+<button onclick="filterCategory('all')">All</button>
+
+<button onclick="filterCategory('bhajiya')">Bhajiya</button>
+
+<button onclick="filterCategory('maggie')">Maggie</button>
+
+<button onclick="filterCategory('vadapav')">Vadapav</button>
+
+<button onclick="filterCategory('paratha')">Paratha</button>
+
+<button onclick="filterCategory('thepla')">Thepla</button>
+
+</div>
+
+</div>
 <div class="menu-grid">
 
 <div class="card">
