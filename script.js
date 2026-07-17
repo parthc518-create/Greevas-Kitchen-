@@ -353,4 +353,163 @@ nav{
       }  "_blank"
   );
 
+}// ===============================
+// Greeva's Kitchen Script
+// ===============================
+
+// WhatsApp Number
+const phone = "917778877642";
+
+// Dynamic Order Function
+function orderItem(item) {
+
+    const message =
+`🍽️ Hello Greeva's Kitchen!
+
+I want to order:
+
+✅ ${item}
+
+Please share availability.
+
+Thank You ❤️`;
+
+    window.open(
+        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+
 }
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
+
+// Sticky Navbar
+
+window.addEventListener("scroll",()=>{
+
+const header=document.querySelector("header");
+
+if(window.scrollY>80){
+
+header.style.background="#ffffff";
+
+header.style.boxShadow="0 10px 25px rgba(0,0,0,.15)";
+
+}else{
+
+header.style.background="#ffffff";
+
+header.style.boxShadow="none";
+
+}
+
+});
+
+// Fade Animation
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".card,.review-card,.gallery-grid img").forEach(el=>{
+
+el.style.opacity="0";
+
+el.style.transform="translateY(40px)";
+
+el.style.transition=".7s";
+
+observer.observe(el);
+
+});
+
+// Gallery Image Popup
+
+const images=document.querySelectorAll(".gallery-grid img");
+
+images.forEach(img=>{
+
+img.onclick=()=>{
+
+let popup=document.createElement("div");
+
+popup.style.position="fixed";
+
+popup.style.left="0";
+
+popup.style.top="0";
+
+popup.style.width="100%";
+
+popup.style.height="100%";
+
+popup.style.background="rgba(0,0,0,.9)";
+
+popup.style.display="flex";
+
+popup.style.alignItems="center";
+
+popup.style.justifyContent="center";
+
+popup.style.cursor="zoom-out";
+
+popup.style.zIndex="99999";
+
+let image=document.createElement("img");
+
+image.src=img.src;
+
+image.style.maxWidth="90%";
+
+image.style.maxHeight="90%";
+
+image.style.borderRadius="15px";
+
+popup.appendChild(image);
+
+document.body.appendChild(popup);
+
+popup.onclick=()=>{
+
+popup.remove();
+
+};
+
+};
+
+});
+
+// Welcome Message
+
+window.onload=()=>{
+
+console.log("🍔 Welcome to Greeva's Kitchen");
+
+};
