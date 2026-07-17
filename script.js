@@ -1,69 +1,314 @@
-let cart = [];
-
-function addCart(name, price) {
-  cart.push({
-    name: name,
-    price: price
-  });
-
-  updateCart();
-
-  alert(name + " Added To Cart");
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-function updateCart() {
 
-  let items = document.getElementById("cartItems");
+html{
+    scroll-behavior:smooth;
+}
 
-  let total = document.getElementById("total");
 
-  items.innerHTML = "";
+body{
+    background:#ffffff;
+    color:#333;
+}
 
-  let grandTotal = 0;
 
-  cart.forEach((item) => {
 
-    grandTotal += item.price;
+/* HEADER */
 
-    items.innerHTML += `
-      <p>${item.name} - ₹${item.price}</p>
-    `;
+header{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#ffffff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
 
-  });
 
-  total.innerHTML = "Total ₹" + grandTotal;
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:#d62828;
+}
+
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    margin-left:25px;
+    font-weight:500;
+}
+
+
+nav a:hover{
+    color:#d62828;
+}
+
+
+
+/* HERO SECTION */
+
+
+.hero{
+
+    height:90vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    background:
+    linear-gradient(
+    rgba(214,40,40,0.75),
+    rgba(214,40,40,0.75)
+    ),
+    url("food.jpg");
+
+    background-size:cover;
+    background-position:center;
 
 }
 
-function checkout() {
 
-  let total = 0;
 
-  let message = "🍲 *Greeva's Kitchen*%0A%0A";
+.hero-content{
+    color:white;
+    max-width:600px;
+}
 
-  cart.forEach((item) => {
 
-    total += item.price;
+.hero h1{
 
-    message += "✅ " + item.name + " - ₹" + item.price + "%0A";
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:20px;
 
-  });
+}
 
-  if(total < 200){
 
-    alert("Minimum Order ₹200");
+.hero p{
 
-    return;
+    font-size:20px;
+    margin-bottom:30px;
 
-  }
+}
 
-  message += "%0A💰 Total : ₹" + total;
 
-  message += "%0A%0A📍Location : Divya Sanskar City, TP-9, Sargasan";
+button{
 
-  window.open(
-  "https://wa.me/917778877642?text=" + message,
-  "_blank"
+    background:white;
+    color:#d62828;
+    border:none;
+    padding:14px 35px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+
+}
+
+
+button:hover{
+
+    background:#111;
+    color:white;
+
+}
+
+
+
+/* FEATURES */
+
+
+.features{
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:60px 8%;
+
+}
+
+
+.box{
+
+    flex:1;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.box h3{
+
+    color:#d62828;
+    margin-bottom:10px;
+
+}
+
+
+
+
+/* COMMON SECTION */
+
+
+section{
+
+    padding:70px 8%;
+    text-align:center;
+
+}
+
+
+section h2{
+
+    font-size:35px;
+    color:#d62828;
+    margin-bottom:30px;
+
+}
+
+
+
+/* MENU */
+
+
+.menu-container{
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
+
+}
+
+
+.card{
+
+    width:300px;
+    padding:35px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.card h3{
+
+    color:#d62828;
+    margin-bottom:15px;
+
+}
+
+
+
+
+/* ABOUT */
+
+
+#about p{
+
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+
+}
+
+
+
+/* WHY */
+
+
+.why ul{
+
+    list-style:none;
+    font-size:20px;
+    line-height:2;
+
+}
+
+
+
+/* CONTACT */
+
+
+.whatsapp{
+
+    background:#d62828;
+    color:white;
+    margin-top:20px;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    background:#d62828;
+    color:white;
+    padding:20px;
+    text-align:center;
+
+}
+
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media(max-width:768px){
+
+
+header{
+
+    flex-direction:column;
+
+}
+
+
+nav{
+
+    margin-top:15px;
+
+}
+
+
+.hero h1{
+
+    font-size:35px;
+
+}
+
+
+.features,
+.menu-container{
+
+    flex-direction:column;
+
+}
+
+
+.card{
+
+    width:100%;
+
+}
+
+
+      }  "_blank"
   );
 
 }
