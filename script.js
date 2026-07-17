@@ -20,7 +20,140 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // WhatsApp Number
 
+// =========================
+// Greeva's Kitchen Cart
+// =========================
 
+let cart = [];
+let total = 0;
+
+// Add Item
+function addToCart(name, price) {
+
+    let item = cart.find(i => i.name === name);
+
+    if(item){
+
+        item.qty++;
+
+    }else{
+
+        cart.push({
+
+            name:name,
+
+            price:price,
+
+            qty:1
+
+        });
+
+    }
+
+    updateCart();
+
+}
+
+// Update Cart
+function updateCart(){
+
+    let cartItems = document.getElementById("cartItems");
+
+    let cartCount = document.getElementById("cartCount");
+
+    let cartTotal = document.getElementById("cartTotal");
+
+    cartItems.innerHTML="";
+
+    total=0;
+
+    let count=0;
+
+    cart.forEach((item,index)=>{
+
+        total += item.price * item.qty;
+
+        count += item.qty;
+
+        cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<h4>${item.name}</h4>
+
+<p>₹${item.price}</p>
+
+<div class="qty">
+
+<button onclick="decreaseQty(${index})">-</button>
+
+<span>${item.qty}</span>
+
+<button onclick="increaseQty(${index})">+</button>
+
+</div>
+
+<button class="remove" onclick="removeItem(${index})">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+    });
+
+    if(cart.length==0){
+
+        cartItems.innerHTML="<p>Your cart is empty.</p>";
+
+    }
+
+    cartTotal.innerHTML=total;
+
+    cartCount.innerHTML=count;
+
+}
+
+// Increase Qty
+
+function increaseQty(index){
+
+    cart[index].qty++;
+
+    updateCart();
+
+}
+
+// Decrease Qty
+
+function decreaseQty(index){
+
+    if(cart[index].qty>1){
+
+        cart[index].qty--;
+
+    }else{
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+
+}
+
+// Remove Item
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
 
 // WhatsApp Order Button
 
