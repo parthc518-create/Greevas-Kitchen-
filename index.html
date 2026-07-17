@@ -222,26 +222,147 @@ Gandhinagar
 
 </section>
 
-<section id="menu">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greeva's Kitchen</title>
 
-<h2 class="title">
+<link rel="stylesheet" href="style.css">
 
-Popular Items
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-</h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<div class="menu-grid">
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+<img src="images/logo.png" alt="Greeva's Kitchen">
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#menu">Menu</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<a href="https://wa.me/917778877642" class="order-btn">
+Order Now
+</a>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Welcome to <span>Greeva's Kitchen</span></h1>
+
+<p>Fresh Food • Best Taste • Happy Mood ❤️</p>
+
+<a href="#menu" class="hero-btn">
+Explore Menu
+</a>
 
 </div>
 
 </section>
-<h3>Cheese Maggi</h3>
 
-<p>₹149</p>
+<section class="about" id="about">
 
-<button onclick="addCart('Cheese Maggi',149)">
-Add To Cart
-</button>
+<div class="container">
+
+<h2>About Us</h2>
+
+<p>
+
+Welcome to Greeva's Kitchen.
+
+We serve fresh homemade food prepared with love and premium ingredients.
+
+Every dish is made to give you the perfect taste at an affordable price.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="menu" id="menu">
+
+<div class="container">
+
+<h2>Our Menu</h2>
+
+<div class="menu-grid">
+
+<div class="card">
+
+<img src="images/bhajiya.jpg">
+
+<h3>Bhajiya Menu</h3>
+
+<ul>
+
+<li>Mix Bhajiya <span>₹149</span></li>
+
+<li>Gota <span>₹149</span></li>
+
+<li>Bataka Vada <span>₹149</span></li>
+
+<li>Paneer Pakoda <span>₹179</span></li>
+
+<li>Cheese Pakoda <span>₹199</span></li>
+
+</ul>
+
+<a href="https://wa.me/917778877642?text=I%20want%20to%20order%20Bhajiya" class="menu-btn">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+
+<img src="images/maggie.jpg">
+
+<h3>Maggie Menu</h3>
+
+<ul>
+
+<li>Masala Maggie <span>₹89</span></li>
+
+<li>Tadka Maggie <span>₹99</span></li>
+
+<li>Cheese Maggie <span>₹149</span></li>
+
+<li>Fire Maggie 🌶️ <span>₹169</span></li>
+
+</ul>
+
+<a href="https://wa.me/917778877642?text=I%20want%20to%20order%20Maggie" class="menu-btn">
+Order Now
+</a>
 
 </div>
 
@@ -249,32 +370,35 @@ Add To Cart
 
 <img src="images/vadapav.jpg">
 
-<h3>Bombay Vadapav</h3>
+<h3>Vadapav Menu</h3>
 
-<p>₹39</p>
+<ul>
 
-<button onclick="addCart('Bombay Vadapav',39)">
-Add To Cart
-</button>
+<li>Bombay Vadapav <span>₹39</span></li>
+
+<li>Butter Fry Vadapav <span>₹59</span></li>
+
+<li>Butter Tadka Vadapav <span>₹79</span></li>
+
+<li>Bombay Vadapav With Patti Bhajiya <span>₹79</span></li>
+
+<li>Extra Patti Bhajiya <span>₹39</span></li>
+
+<li>Fire Bomb Vadapav 🌶️ <span>₹99</span></li>
+
+</ul>
+
+<a href="https://wa.me/917778877642?text=I%20want%20to%20order%20Vadapav" class="menu-btn">
+Order Now
+</a>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
-
-<section class="cart">
-
-<h2>Cart</h2>
-
-<div id="cartItems"></div>
-
-<h3 id="total">
-Total ₹0
-</h3>
-
-<button onclick="checkout()">
-Checkout
-</button>
-
 </section>
 
 <footer>
