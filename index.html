@@ -69,234 +69,91 @@ id="searchMenu"
 placeholder="🔍 Search Your Favourite Food..."
 onkeyup="searchFood()">
 
-<div class="category-filter">
 
-<button onclick="filterCategory('all')">All</button>
 
-<button onclick="filterCategory('bhajiya')">Bhajiya</button>
+<section class="menu" id="menu">
 
-<button onclick="filterCategory('maggie')">Maggie</button>
+<div class="section-title">
 
-<button onclick="filterCategory('vadapav')">Vadapav</button>
+<h4>OUR MENU</h4>
 
-<button onclick="filterCategory('paratha')">Paratha</button>
-
-<button onclick="filterCategory('thepla')">Thepla</button>
+<h2>Popular Dishes</h2>
 
 </div>
 
-</div>
 <div class="menu-grid">
 
-<div class="card">
+<!-- CARD -->
 
-<img src="images/bhajiya.jpg">
+<div class="food-card">
 
-<h3>Bhajiya Menu</h3>
+<div class="food-image">
 
-<ul>
-
-<li>Mix Bhajiya <span>₹149</span></li>
-
-<li>Gota <span>₹149</span></li>
-
-<li>Bataka Vada <span>₹149</span></li>
-
-<li>Paneer Pakoda <span>₹179</span></li>
-
-<li>Cheese Pakoda <span>₹199</span></li>
-
-</ul>
-
-<a href="https://wa.me/917778877642?text=I%20want%20to%20order%20Bhajiya" class="menu-btn">
-Order Now
-</a>
-
-</div>
-
-<div class="card">
-
-<img src="images/maggie.jpg">
-
-<!-- ========================= -->
-<!-- BHAJIYA -->
-<!-- ========================= -->
-
-<div class="category">
-<h2>🥟 Bhajiya</h2>
-
-<div class="card">
-<img src="images/mix-bhajiya.jpg">
-<h3>Mix Bhajiya (250gm)</h3>
-<p>₹149</p>
-<button class="menu-btn" onclick="addToCart('Mix Bhajiya',149)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/gota.jpg">
-<h3>Gota (250gm)</h3>
-<p>₹149</p>
-<button class="menu-btn" onclick="addToCart('Gota',149)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/bataka-vada.jpg">
-<h3>Bataka Vada (250gm)</h3>
-<p>₹149</p>
-<button class="menu-btn" onclick="addToCart('Bataka Vada',149)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/paneer-pakoda.jpg">
-<h3>Paneer Pakoda (250gm)</h3>
-<p>₹179</p>
-<button class="menu-btn" onclick="addToCart('Paneer Pakoda',179)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/cheese-pakoda.jpg">
-<h3>Cheese Pakoda (250gm)</h3>
-<p>₹199</p>
-<button class="menu-btn" onclick="addToCart('Cheese Pakoda',199)">Add to Cart</button>
-</div>
-
-</div>
-
-<!-- ========================= -->
-<!-- MAGGIE -->
-<!-- ========================= -->
-
-<div class="category">
-<h2>🍜 Maggie</h2>
-
-<div class="card">
-<img src="images/masala-maggie.jpg">
-<h3>Masala Maggie</h3>
-<p>₹89</p>
-<button class="menu-btn" onclick="addToCart('Masala Maggie',89)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/tadka-maggie.jpg">
-<h3>Tadka Maggie</h3>
-<p>₹99</p>
-<button class="menu-btn" onclick="addToCart('Tadka Maggie',99)">Add to Cart</button>
-</div>
-
-<div class="card">
 <img src="images/cheese-maggie.jpg">
+
+<span class="badge">⭐ Bestseller</span>
+
+</div>
+
+<div class="food-content">
+
 <h3>Cheese Maggie</h3>
-<p>₹149</p>
-<button class="menu-btn" onclick="addToCart('Cheese Maggie',149)">Add to Cart</button>
+
+<p>Loaded with Cheese & Delicious Taste.</p>
+
+<div class="food-bottom">
+
+<h2>₹149</h2>
+
+<button onclick="addToCart('Cheese Maggie',149)">
+
++
+
+</button>
+
 </div>
 
-<div class="card">
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="food-card">
+
+<div class="food-image">
+
 <img src="images/fire-maggie.jpg">
-<h3>Fire Maggie 🌶️</h3>
-<p>₹169</p>
-<button class="menu-btn" onclick="addToCart('Fire Maggie',169)">Add to Cart</button>
+
+<span class="spicy">🌶️ Spicy</span>
+
+</div>
+
+<div class="food-content">
+
+<h3>Fire Maggie</h3>
+
+<p>Extra Hot & Spicy Special.</p>
+
+<div class="food-bottom">
+
+<h2>₹169</h2>
+
+<button onclick="addToCart('Fire Maggie',169)">
+
++
+
+</button>
+
 </div>
 
 </div>
 
-<!-- ========================= -->
-<!-- VADAPAV -->
-<!-- ========================= -->
-
-<div class="category">
-<h2>🌭 Vadapav</h2>
-
-<div class="card">
-<img src="images/bombay-vadapav.jpg">
-<h3>Bombay Vadapav</h3>
-<p>₹39</p>
-<button class="menu-btn" onclick="addToCart('Bombay Vadapav',39)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/butter-fry.jpg">
-<h3>Butter Fry Vadapav</h3>
-<p>₹59</p>
-<button class="menu-btn" onclick="addToCart('Butter Fry Vadapav',59)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/butter-tadka.jpg">
-<h3>Butter Tadka Vadapav</h3>
-<p>₹79</p>
-<button class="menu-btn" onclick="addToCart('Butter Tadka Vadapav',79)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/patti-bhajiya.jpg">
-<h3>Bombay Vadapav with Patti Bhajiya</h3>
-<p>₹79</p>
-<button class="menu-btn" onclick="addToCart('Bombay Vadapav with Patti Bhajiya',79)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/extra-patti.jpg">
-<h3>Extra Patti Bhajiya</h3>
-<p>₹39</p>
-<button class="menu-btn" onclick="addToCart('Extra Patti Bhajiya',39)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/fire-bomb.jpg">
-<h3>Fire Bomb Vadapav 🌶️</h3>
-<p>₹99</p>
-<button class="menu-btn" onclick="addToCart('Fire Bomb Vadapav',99)">Add to Cart</button>
 </div>
 
 </div>
 
-<!-- ========================= -->
-<!-- PARATHA -->
-<!-- ========================= -->
-
-<div class="category">
-<h2>🫓 Aloo Paratha</h2>
-
-<div class="card">
-<img src="images/aloo-paratha.jpg">
-<h3>Aloo Paratha</h3>
-<p>₹119</p>
-<button class="menu-btn" onclick="addToCart('Aloo Paratha',119)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/cheese-aloo.jpg">
-<h3>Cheese Aloo Paratha</h3>
-<p>₹149</p>
-<button class="menu-btn" onclick="addToCart('Cheese Aloo Paratha',149)">Add to Cart</button>
-</div>
-
-</div>
-
-<!-- ========================= -->
-<!-- METHI THEPLA -->
-<!-- ========================= -->
-
-<div class="category">
-<h2>🌿 Methi Thepla</h2>
-
-<div class="card">
-<img src="images/thepla4.jpg">
-<h3>4 pcs + Dahi + Lasaniya Chutney</h3>
-<p>₹79</p>
-<button class="menu-btn" onclick="addToCart('4 pcs Thepla',79)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/thepla10.jpg">
-<h3>10 pcs + Dahi + Lasaniya Chutney</h3>
-<p>₹149</p>
-<button class="menu-btn" onclick="addToCart('10 pcs Thepla',149)">Add to Cart</button>
-</div>
-
-</div>
-
-    </ul>
+</section>
 
     <a href="https://wa.me/917778877642?text=I%20want%20to%20order%20Methi%20Thepla" class="menu-btn">
         Order Now
