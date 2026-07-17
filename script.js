@@ -681,3 +681,62 @@ window.onload=()=>{
 console.log("🍔 Welcome to Greeva's Kitchen");
 
 };
+// =========================
+// Search Menu
+// =========================
+
+function searchFood(){
+
+let input=document.getElementById("searchMenu").value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let title=card.querySelector("h3").innerText.toLowerCase();
+
+if(title.includes(input)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+// =========================
+// Category Filter
+// =========================
+
+function filterCategory(category){
+
+let sections=document.querySelectorAll(".category");
+
+sections.forEach(section=>{
+
+if(category=="all"){
+
+section.style.display="block";
+
+}
+
+else if(section.classList.contains(category)){
+
+section.style.display="block";
+
+}
+
+else{
+
+section.style.display="none";
+
+}
+
+});
+
+}
